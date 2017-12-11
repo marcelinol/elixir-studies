@@ -42,7 +42,7 @@ defmodule EventBus.Endpoint do
   defp save_email(email) do
     binary = :erlang.term_to_binary(email)
 
-    File.write("conversions_#{:os.system_time}", binary)
+    File.write("conversions/conversions_#{:os.system_time}", binary)
     Poison.encode!(%{response: "Hello, #{email}"})
   end
 end
